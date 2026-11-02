@@ -27,8 +27,8 @@
   "Logistic Regression": {
     "model_name": "Multinomial Logistic Regression",
     "accuracy": 0.5285101460452114,
-    "log_loss": 0.9704724402608147,
-    "brier_score": 0.578278654733783,
+    "log_loss": 0.9704724402609566,
+    "brier_score": 0.5782786547338995,
     "f1_macro": 0.3976519642167991,
     "f1_weighted": 0.4513709167907273,
     "confusion_matrix": [
@@ -51,11 +51,11 @@
   },
   "Random Forest": {
     "model_name": "Random Forest",
-    "accuracy": 0.5252807634838772,
-    "log_loss": 0.971779924061745,
-    "brier_score": 0.5791023183570769,
-    "f1_macro": 0.40139699774410637,
-    "f1_weighted": 0.4535838138570281,
+    "accuracy": 0.5249433653058273,
+    "log_loss": 0.9716875619761868,
+    "brier_score": 0.5790694189790092,
+    "f1_macro": 0.4018799512115054,
+    "f1_weighted": 0.45385989318655046,
     "confusion_matrix": [
       [
         7230,
@@ -63,21 +63,21 @@
         1741
       ],
       [
-        3228,
-        89,
+        3219,
+        98,
         1944
       ],
       [
-        2760,
-        82,
-        3579
+        2768,
+        90,
+        3563
       ]
     ]
   },
   "XGBoost": {
     "model_name": "XGBoost Classifier",
     "accuracy": 0.5268713548946836,
-    "log_loss": 0.9729639291763306,
+    "log_loss": 0.9729639103683231,
     "brier_score": 0.5797267709193155,
     "f1_macro": 0.40200642813932586,
     "f1_weighted": 0.4544102224980542,

@@ -1,30 +1,63 @@
-# ⚽ Football Odds Intelligence & Match Analytics
+# ⚽ ODDSPULSE — Football Odds Intelligence & Match Analytics
 
-[![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/pytest-15%20passed-brightgreen.svg)](tests/)
+[![Python](https://img.shields.io/badge/Python-3.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/pytest-15%20passed%20(100%25)-brightgreen.svg)](tests/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App%20Ready-FF4B4B.svg)](dashboard/app.py)
+[![Streamlit](https://img.shields.io/badge/Streamlit-ODDSPULSE%20Platform-FF4B4B.svg)](dashboard/app.py)
+[![Design System](https://img.shields.io/badge/Theme-Dark%20%26%20Lime%20Green-C5F23B.svg)](dashboard/app.py)
 
-A professional, end-to-end Data Science, Machine Learning, and Quantitative Analytics portfolio project analyzing historical football betting odds, bookmaker behavior, odds movements, and match outcomes across **63,597 matches** and **~37 million odds observations** (2018–2026).
+**ODDSPULSE** is a high-performance quantitative sports analytics platform developed to analyze market efficiency, bookmaker pricing power, odds momentum, and predictive machine learning models across **63,597 matches** and **~37 million odds ticks** from 2018 to 2026 across four global bookmakers (**Pinnacle, Bet365, SBOBET, Singbet**).
 
 ---
 
-## 🎯 Key Project Highlights
+## 🎨 Premium Sports Analytics Design System
 
-- **Scale:** 63,597 historical football fixtures across global competitions; 251,326 multi-bookmaker opening & closing odds quotes; ~37M tick-level odds movements.
-- **Sharp Bookmaker Benchmark:** Statistically demonstrated that **Pinnacle** operates as the sharpest benchmark bookmaker with a **3.34%** median overround, compared to **5.95%** for Bet365 and **6.23%** for SBOBET (Kruskal-Wallis $H = 107,374.91$, $p < 10^{-300}$).
-- **Home Advantage Quantification:** One-sample Z-test confirms global Home Win rate of **43.81%** ($Z = 56.06$, $p \approx 0.0$, 95% CI: [43.43%, 44.20%]).
-- **Leakage-Free ML Benchmarking:** Strict chronological out-of-time evaluation (Train: 42,328 matches < 2024; Test: 20,747 matches 2024–2026). Our **Calibrated Logistic Regression** matches/edges the bookmaker consensus baseline with **52.85% Accuracy** and **0.9705 Log Loss**.
-- **Market Anomaly Radar:** Unsupervised Isolation Forest flagged 1,262 erratic fixtures; discovered that in anomalous fixtures, the **Draw rate collapses by 72.6%** (from 25.7% down to 7.05%), indicating extreme market polarization.
-- **Interactive Streamlit Dashboard:** 6-module interactive analytics application featuring an interactive odds probability engine.
-- **100% Test Coverage:** 15 unit tests across data loaders, cleaning pipelines, feature engineering, statistical hypothesis testing, ML models, and anomaly detectors.
+The platform has been redesigned into a sleek, dark-themed sports intelligence interface inspired by modern professional football analytics systems:
+
+- **Main Background:** `#080D16` (Deep navy/black)
+- **Secondary Background:** `#101927` (Charcoal navy)
+- **Card Background:** `#172333` (Card surface with borders `#253449`)
+- **Primary Accent:** `#C5F23B` (Vibrant lime green)
+- **Secondary Accent:** `#27B8D1` (Cyan blue)
+- **Typography:** Modern clean sans-serif with monospace metric callouts
+- **Information Architecture:** 8 specialized analytical modules with interactive Plotly visualizations and zero data leakage.
+
+---
+
+## 🧭 8 Integrated Platform Modules
+
+1. **📊 Executive Overview:** Top-line KPI metrics (63,597 matches, ~37M ticks, 4 bookmakers, 33 competitions), Match & Market Spotlight card, and live model forecast vs. bookmaker consensus bar chart.
+2. **🔍 Match Explorer:** Search fixtures by team name, filter by league, season, or outcome; interactive single-match inspector featuring full bookmaker quote breakdown (Open vs Close odds, margin %, fair implied probabilities).
+3. **📈 Odds Analytics:** Closing decimal odds distributions, fair implied probability violin plots, odds drift momentum histograms, and league-level home advantage rankings.
+4. **🏦 Bookmaker Analysis:** Margin audit comparing Pinnacle (3.34% median), Singbet (5.45%), Bet365 (5.95%), and SBOBET (6.23%); statistical verification via Kruskal-Wallis ($H = 107,374.91, p < 10^{-300}$).
+5. **🤖 Predictive Analytics:** Interactive decimal odds probability calculator with automatic overround margin removal, and strict chronological validation disclosures (evaluated on 20,747 test matches).
+6. **🚨 Anomaly Radar:** Unsupervised Isolation Forest (2% contamination, 1,262 fixtures flagged); visual proof of the empirical **Draw rate collapse** from 25.7% to 7.05% (-72.6%) in polarized anomalous markets.
+7. **📋 Model Performance:** Rigorous benchmark suite comparing Bookmaker Baseline, Calibrated Logistic Regression, Random Forest, and XGBoost with accuracy bars, interactive confusion matrix heatmaps, and log loss / Brier score evaluations.
+8. **ℹ️ About Project:** System architecture, LaTeX mathematical formulations, data lineage, and developer profile.
+
+---
+
+## 📊 Machine Learning Model Benchmarks
+
+Evaluated strictly on an **out-of-time test set of 20,747 fixtures (2024–2026)** to prevent lookahead leakage:
+
+| Model | Accuracy (%) | Multi-Class Log Loss | Brier Score | Macro F1 |
+|---|---|---|---|---|
+| **Bookmaker Consensus Baseline** | 52.74% | 0.9706 | 0.5781 | 0.4468 |
+| **Calibrated Logistic Regression** | **52.85%** | **0.9705** | **0.5783** | **0.4452** |
+| **Random Forest Classifier** | 52.53% | 0.9718 | 0.5791 | 0.4485 |
+| **XGBoost Classifier** | 52.69% | 0.9730 | 0.5797 | 0.4534 |
 
 ---
 
 ## 🏗️ Project Architecture
 
 ```
-football dashboard/
+Football-Odd-Prediction/
+├── .streamlit/
+│   └── config.toml                # Custom dark theme configuration
+├── dashboard/
+│   └── app.py                     # Streamlit Interactive Web Application (ODDSPULSE)
 ├── data/
 │   ├── raw/                       # Raw Apache Parquet datasets (read-only)
 │   └── processed/                 # Cleaned datasets & ML feature matrices
@@ -43,13 +76,11 @@ football dashboard/
 │   ├── evaluation/                # metrics.py, statistical_tests.py
 │   └── visualization/             # plots.py
 ├── models/
-│   ├── best_model.joblib          # Trained ML model artifact
+│   ├── best_model.joblib          # Trained ML model artifact (Logistic Regression)
 │   └── isolation_forest.joblib    # Unsupervised anomaly model
-├── dashboard/
-│   └── app.py                     # Interactive Streamlit Web Application
 ├── tests/                         # Pytest unit testing suite (15 tests)
 ├── reports/
-│   ├── figures/                   # Publication-grade charts & diagrams
+│   ├── figures/                   # 12 Publication-grade charts & diagrams
 │   └── analysis/                  # Statistical JSONs & final project report
 ├── requirements.txt
 ├── README.md
@@ -59,88 +90,36 @@ football dashboard/
 
 ---
 
-## 📊 Machine Learning Model Benchmarks
-
-Evaluated on an **out-of-time test set of 20,747 fixtures (2024–2026)**:
-
-| Model | Accuracy (%) | Multi-Class Log Loss | Brier Score | Macro F1 |
-|---|---|---|---|---|
-| **Bookmaker Consensus Baseline** | 52.74% | 0.9706 | 0.5781 | 0.4468 |
-| **Calibrated Logistic Regression** | **52.85%** | **0.9705** | **0.5783** | **0.4452** |
-| **Random Forest Classifier** | 52.53% | 0.9718 | 0.5791 | 0.4485 |
-| **XGBoost Classifier** | 52.69% | 0.9730 | 0.5797 | 0.4534 |
-
----
-
 ## 🚀 Quick Start Guide
 
-### 1. Prerequisites
-- Python 3.12+ (tested on Python 3.14.6)
-- Virtual environment
-
-### 2. Environment Setup
-```bash
-# Clone the repository
-git clone <repo-url>
-cd "football dashboard"
-
-# Activate your virtual environment
-# Windows:
-venv\Scripts\activate
-# Linux / macOS:
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 3. Run Automated Unit Tests
+### 1. Run Automated Unit Tests (15 Tests)
 ```bash
 pytest tests/
 ```
-All 15 tests should pass.
+All 15 tests should pass with 100% success rate.
 
-### 4. Run the Data & Modeling Pipelines
-```bash
-# 1. Profile raw data
-python src/data/profiling.py
-
-# 2. Run data cleaning pipeline
-python src/data/cleaner.py
-
-# 3. Run statistical hypothesis tests & generate figures
-python src/evaluation/run_statistical_analysis.py
-
-# 4. Engineer ML feature matrix
-python src/features/builder.py
-
-# 5. Train & benchmark supervised ML models
-python src/models/trainer.py
-
-# 6. Fit unsupervised anomaly detection (Isolation Forest)
-python src/models/anomaly.py
-```
-
-### 5. Launch Interactive Dashboard
+### 2. Launch ODDSPULSE Dashboard
 ```bash
 streamlit run dashboard/app.py
 ```
 
----
+### 3. Re-run Full Data & Modeling Pipeline
+```bash
+# 1. Run data cleaning pipeline:
+python src/data/cleaner.py
 
-## 📈 Visual Reports & Artifacts
+# 2. Run feature engineering pipeline:
+python src/features/builder.py
 
-The pipeline generates publication-grade visualizations in `reports/figures/`:
-- `missing_values.png` — Dataset missingness audit
-- `initial_distributions.png` — Match outcomes, goal frequencies, and yearly coverage
-- `closing_odds_distribution.png` — Decimal odds distributions
-- `bookmaker_margins.png` — Overround margin boxplots and density curves (Pinnacle vs Bet365 vs SBOBET vs Singbet)
-- `odds_drift_distribution.png` — 1X2 market odds drift percentages
-- `league_home_advantage.png` — Competition rankings by home win percentage
-- `model_comparison.png` — ML accuracy, log loss, and Brier score benchmarks
-- `confusion_matrices.png` — Multi-class confusion heatmaps on the out-of-time test set
-- `calibration_curves.png` — Reliability diagrams comparing ML probabilities vs Bookmaker consensus
-- `anomaly_distribution.png` — Isolation Forest decision score distribution and draw rate collapse
+# 3. Train & benchmark supervised ML models:
+python src/models/trainer.py
+
+# 4. Fit unsupervised anomaly detection:
+python src/models/anomaly.py
+
+# 5. Run statistical hypothesis tests:
+python src/evaluation/run_statistical_analysis.py
+```
 
 ---
 
@@ -148,7 +127,8 @@ The pipeline generates publication-grade visualizations in `reports/figures/`:
 
 **Mohd Afzal**  
 B.Tech Electronics and Communication Engineering (3rd Year)  
-Interest: Data Science, Machine Learning, and Quantitative Analytics  
+Interest: Data Science, Quantitative Sports Analytics, Machine Learning  
+GitHub: [Bhagwan01/Football-Odd-Prediction](https://github.com/Bhagwan01/Football-Odd-Prediction)
 
 ## 📄 License
-This project is for educational and portfolio purposes.
+This project is for educational and portfolio purposes under the MIT License.
