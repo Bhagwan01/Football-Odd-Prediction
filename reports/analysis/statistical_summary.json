@@ -1,0 +1,78 @@
+{
+  "bookmaker_margin_test": {
+    "test_name": "Kruskal-Wallis H-Test for Overround Margins",
+    "h_statistic": 107374.90532704759,
+    "p_value": 0.0,
+    "is_significant": true,
+    "bookmaker_summaries": {
+      "Bet365": {
+        "count": 62936,
+        "mean": 6.182806260935587,
+        "median": 5.952380952380953,
+        "std": 1.552580929968474
+      },
+      "Pinnacle": {
+        "count": 62593,
+        "mean": 3.6200290587142994,
+        "median": 3.340136942486005,
+        "std": 1.220622848808809
+      },
+      "SBOBET": {
+        "count": 62291,
+        "mean": 7.152257597140619,
+        "median": 6.22839479909274,
+        "std": 2.1739739676154
+      },
+      "Singbet": {
+        "count": 62776,
+        "mean": 6.80327627834443,
+        "median": 5.452061599602587,
+        "std": 2.4713285295765925
+      }
+    },
+    "pinnacle_vs_bet365_p_value": 0.0
+  },
+  "odds_drift_test": {
+    "home": {
+      "mean_drift": 0.15143689672921998,
+      "median_drift": 0.039999999999999813,
+      "w_statistic": 68366403.5,
+      "p_value": 1.4323700851565382e-207,
+      "is_significant": true
+    },
+    "draw": {
+      "mean_drift": 0.10650699032844967,
+      "median_drift": 0.010000000000000231,
+      "w_statistic": 69619141.0,
+      "p_value": 4.9532625091476076e-92,
+      "is_significant": true
+    },
+    "away": {
+      "mean_drift": 0.27719934481437736,
+      "median_drift": 0.06000000000000005,
+      "w_statistic": 69707662.5,
+      "p_value": 5.233996799840098e-186,
+      "is_significant": true
+    }
+  },
+  "league_independence_test": {
+    "test_name": "Chi-Square Test of Independence (League vs Outcome)",
+    "chi2_statistic": 754.0105558415808,
+    "p_value": 1.8096295724825773e-118,
+    "degrees_of_freedom": 64,
+    "n_leagues_evaluated": 33,
+    "is_significant": true
+  },
+  "home_advantage_test": {
+    "total_matches": 63597,
+    "home_wins": 27864,
+    "home_win_rate": 0.4381338742393509,
+    "z_statistic": 56.06451839732268,
+    "p_value": 0.0,
+    "ci_95": [
+      0.43427769157951623,
+      0.4419900568991856
+    ],
+    "is_significant": true
+  }
+}

@@ -1,0 +1,35 @@
+# =============================================================================
+# Football Odds Intelligence & Match Analytics - Requirements
+# =============================================================================
+
+# Core Data Science
+pandas>=2.2.0
+numpy>=1.26.0
+pyarrow>=15.0.0              # Parquet file support
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0               # Interactive plots
+
+# Machine Learning
+scikit-learn>=1.4.0
+xgboost>=2.0.0
+
+# Statistical Analysis
+scipy>=1.12.0
+
+# Dashboard
+streamlit>=1.30.0
+
+# Jupyter / Notebooks
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.28.0
+
+# Testing
+pytest>=8.0.0
+
+# Utilities
+tqdm>=4.66.0                 # Progress bars for large data processing
+joblib>=1.3.0                # Model serialization

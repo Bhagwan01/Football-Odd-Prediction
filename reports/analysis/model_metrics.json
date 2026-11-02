@@ -1,0 +1,102 @@
+{
+  "Bookmaker Baseline": {
+    "model_name": "Bookmaker Consensus Baseline",
+    "accuracy": 0.5273533522918976,
+    "log_loss": 0.9705796829860939,
+    "brier_score": 0.5780639546143871,
+    "f1_macro": 0.39467799366453216,
+    "f1_weighted": 0.4489350025738453,
+    "confusion_matrix": [
+      [
+        7484,
+        33,
+        1548
+      ],
+      [
+        3404,
+        35,
+        1822
+      ],
+      [
+        2969,
+        30,
+        3422
+      ]
+    ]
+  },
+  "Logistic Regression": {
+    "model_name": "Multinomial Logistic Regression",
+    "accuracy": 0.5285101460452114,
+    "log_loss": 0.9704724402608147,
+    "brier_score": 0.578278654733783,
+    "f1_macro": 0.3976519642167991,
+    "f1_weighted": 0.4513709167907273,
+    "confusion_matrix": [
+      [
+        7541,
+        49,
+        1475
+      ],
+      [
+        3444,
+        59,
+        1758
+      ],
+      [
+        3002,
+        54,
+        3365
+      ]
+    ]
+  },
+  "Random Forest": {
+    "model_name": "Random Forest",
+    "accuracy": 0.5252807634838772,
+    "log_loss": 0.971779924061745,
+    "brier_score": 0.5791023183570769,
+    "f1_macro": 0.40139699774410637,
+    "f1_weighted": 0.4535838138570281,
+    "confusion_matrix": [
+      [
+        7230,
+        94,
+        1741
+      ],
+      [
+        3228,
+        89,
+        1944
+      ],
+      [
+        2760,
+        82,
+        3579
+      ]
+    ]
+  },
+  "XGBoost": {
+    "model_name": "XGBoost Classifier",
+    "accuracy": 0.5268713548946836,
+    "log_loss": 0.9729639291763306,
+    "brier_score": 0.5797267709193155,
+    "f1_macro": 0.40200642813932586,
+    "f1_weighted": 0.4544102224980542,
+    "confusion_matrix": [
+      [
+        7349,
+        86,
+        1630
+      ],
+      [
+        3286,
+        95,
+        1880
+      ],
+      [
+        2846,
+        88,
+        3487
+      ]
+    ]
+  }
+}

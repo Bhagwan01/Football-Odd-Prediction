@@ -1,0 +1,59 @@
+# =============================================================================
+# Football Odds Intelligence & Match Analytics - .gitignore
+# =============================================================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ---- Virtual Environment ----
+venv/
+env/
+.env/
+
+# ---- Jupyter Notebooks ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- Data (do NOT commit raw/large datasets) ----
+data/raw/
+data/processed/*.parquet
+data/processed/*.csv
+data/external/
+
+# ---- Trained Models (large binary files) ----
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Environment Variables ----
+.env
+.env.local
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Misc ----
+.matplotlib_cache/
+*.bak
+*.tmp
